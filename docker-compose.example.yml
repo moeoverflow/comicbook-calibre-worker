@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  comicbook-calibre-worker:
+    container_name: comicbook-calibre-worker
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    networks:
+      - mongodb_default
+    volumes:
+      - xxx:/usr/src/app/storage/library
+      - xxx:/usr/src/app/storage/nhentai
+      - xxx:/usr/src/app/storage/ehentai
+      - xxx:/usr/src/app/storage/wnacg
+networks:
+  mongodb_default:
+    external: true
